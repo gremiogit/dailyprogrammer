@@ -1,2 +1,1 @@
-# Coding challenges from reddit.com/r/dailyprogrammer/
-dailyprogrammer/src/Main.java
+# dailyprogrammer/src/Main.java
