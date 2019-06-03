@@ -285,6 +285,74 @@ public class Main {
 //    you just type it in and hit enter.
 
     private static void diceRoll(String roll){
-        
+
+    }
+
+//    ***************************************************************************************************
+//    ***************************************************************************************************
+
+//    [2018-06-11] Challenge #363 - I before E except after C
+
+//    "I before E except after C" is perhaps the most famous English spelling rule.
+//    For the purpose of this challenge, the rule says:
+//
+//    If "ei" appears in a word, it must immediately follow "c".
+//    If "ie" appears in a word, it must not immediately follow "c".
+//    A word also follows the rule if neither "ei" nor "ie" appears anywhere in the word.
+//    Examples of words that follow this rule are:
+//
+//    fiery hierarchy hieroglyphic
+//    ceiling inconceivable receipt
+//    daily programmer one two three
+
+//    There are many exceptions that don't follow this rule, such as:
+//
+//    sleigh stein fahrenheit
+//    deifies either nuclei reimburse
+//    ancient juicier societies
+
+//    Challenge:
+
+//    Write a function that tells you whether or not a given word follows the "I before E except after C" rule.
+//
+//    check("a") => true
+//    check("zombie") => true
+//    check("transceiver") => true
+//    check("veil") => false
+//    check("icier") => false
+
+    private static boolean check(String str){
+
+    }
+
+//    ***************************************************************************************************
+//    ***************************************************************************************************
+
+//    [2018-05-14] Challenge #361 - Tally Program
+
+//    5 Friends (let's call them a, b, c, d and e) are playing a game and need to keep track of the scores.
+//    Each time someone scores a point, the letter of his name is typed in lowercase.
+//    If someone loses a point, the letter of his name is typed in uppercase.
+//    Give the resulting score from highest to lowest.
+//
+//    Input Description: A series of characters indicating who scored a point.
+//
+//    Examples:
+//
+//    abcde
+//    dbbaCEDbdAacCEAadcB
+
+//    Output Description:
+
+//    The score of every player, sorted from highest to lowest. Examples:
+//
+//    a:1, b:1, c:1, d:1, e:1
+//    b:2, d:2, a:1, c:0, e:-2
+
+//    Challenge Input:
+//    EbAAdbBEaBaaBBdAccbeebaec
+
+    private static void tallyScores(String str){
+
     }
 }
