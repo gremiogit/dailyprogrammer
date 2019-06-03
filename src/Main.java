@@ -1,18 +1,15 @@
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(fit1(25, 18, 6, 5));
-        System.out.println(fit1(10, 10, 1, 1));
-        System.out.println(fit1(12, 34, 5, 6));
-        System.out.println(fit1(12345, 678910, 1112, 1314));
-        System.out.println(fit1(5, 100, 6, 1));
+        addOne(998);
     }
 
 //    ***************************************************************************************************
-//                            REDDIT DAILY PROGRAMMING CHALLENGES
+//                            REDDIT DAILY PROGRAMMING CHALLENGES (reddit.com/r/dailyprogrammer/)
 //    ***************************************************************************************************
-
-
 
 //    [2019-04-08] Challenge #377 - Axis-aligned crate packing
 
@@ -37,10 +34,46 @@ public class Main {
 //    fit1(12345, 678910, 1112, 1314) => 5676
 //    fit1(5, 100, 6, 1) => 0
 
-    private static int fit1(int X, int Y, int x, int y){
-        int resultX = X / x;
-        int resultY = Y / y;
+    private static int fit1(int crateX, int crateY, int boxX, int boxY){
+        int resultX = crateX / boxX;
+        int resultY = crateY / boxY;
         return resultX * resultY;
+    }
+//    ***************************************************************************************************
+//    ***************************************************************************************************
+
+//    [2019-02-11] Challenge #375 - Print a new number by adding one to each of its digit
+
+//    A number is input in computer then a new no should get printed by adding one to each of its digit.
+//    If you encounter a 9, insert a 10 (don't carry over, just shift things around).
+//
+//    For example, 998 becomes 10109.
+//
+//    Bonus:
+//
+//    This challenge is trivial to do if you map it to a string to iterate over the input,
+//    operate, and then cast it back.
+//    Instead, try doing it without casting it as a string at any point,
+//    keep it numeric (int, float if you need it) only.
+
+    private static void addOne(int n){
+
+        ArrayList<Integer> nums = new ArrayList<>();
+        Stack<Integer> st = new Stack<>();
+
+        while(n > 0){
+            st.push(n % 10);
+            n /= 10;
+        }
+
+        while(!st.empty()){
+            nums.add(st.pop());
+        }
+
+        for(int i = 0; i < nums.size(); i++){
+            nums.set(i, nums.get(i) + 1);
+            System.out.print(nums.get(i));
+        }
     }
 
 }
