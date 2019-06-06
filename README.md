@@ -1,1 +1,2 @@
-# /src/Main.java
+#Coding challenges from reddit.com/r/dailyprogrammer/
+/src/Main.java
