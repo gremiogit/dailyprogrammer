@@ -1,11 +1,11 @@
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args){
+        tallyScores("dbbaCEDbdAacCEAadcB");
     }
+
 
 //    ***************************************************************************************************
 //                            REDDIT DAILY PROGRAMMING CHALLENGES (reddit.com/r/dailyprogrammer/)
@@ -140,65 +140,59 @@ public class Main {
 //    balanced_bonus("x") => true
 //    balanced_bonus("") => true
 
-    private static void balanced(String str){
+    private static boolean balanced(String str){
+        if(str.isEmpty()){
+            return true;
+        }
+        int xCount = 0;
+        int yCount = 0;
+
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == 'x'){
+                xCount++;
+            }
+            if(str.charAt(i) == 'y'){
+                yCount++;
+            }
+        }
+
+        return xCount == yCount;
+    }
+
+    private static boolean balanced_bonus(String str){
+        if(str.isEmpty()){
+            return true;
+        }else if(str.length() == 1){
+            return true;
+        }
+
+        boolean balanced = true;
+        char[] letters = str.toCharArray();
+
+        char firstLetter = letters[0];
+        int firstLetterCount = 0;
+
+        for(char letter : letters){
+            if(letter == firstLetter){
+                firstLetterCount++;
+            }
+        }
+
+        for(int i = 1; i < str.length(); i++){
+            int letterCount = 0;
+            for(char letter : letters){
+                if(letter == letters[i]){
+                    letterCount++;
+                }
+            }
+            if(letterCount != firstLetterCount){
+                balanced = false;
+            }
+        }
+        return balanced;
 
     }
 
-    private static void balanced_bonus(String str){
-
-    }
-
-//    ***************************************************************************************************
-//    ***************************************************************************************************
-
-//    [2018-11-26] Challenge #369 - Hex colors
-//
-//    One common way for software specifications such as HTML to specify colors is with a hexadecimal string.
-//    For instance the color aquamarine is represented by the string "#7FFFD4". Here's how the string breaks down:
-//
-//    The first character is always "#".
-//    The second and third character are the red channel value, represented as a hexadecimal value between 00 and FF.
-
-//    In this example, the red channel value is 127, which in hexadecimal is 7F.
-//    The fourth and fifth character are the green channel value, represented the same way.
-
-//    In this example, the green channel value is 255, which in hexadecimal is FF.
-//    The sixth and seventh character are the blue channel value, represented the same way.
-
-//    In this example, the blue channel value is 212, which in hexadecimal is D4.
-//    All three channel values must be an integer between 0 (minimum brightness) and 255 (maximum brightness).
-
-//    In all cases the hex values are two digits each, including a leading 0 if necessary.
-//    See the Wikipedia page for more examples, and a link for how to convert a number to hexadecimal.
-
-//    Challenge:
-//
-//    Given three integers between 0 and 255, corresponding to the red, green, and blue channel values of a color,
-//    find the hex string for that color. You may use anything built into your programming language,
-//    such as for base conversion, but you can also do it manually.
-
-//    Examples:
-
-//    hexcolor(255, 99, 71) => "#FF6347"  (Tomato)
-//    hexcolor(184, 134, 11) => "#B8860B"  (DarkGoldenrod)
-//    hexcolor(189, 183, 107) => "#BDB76B"  (DarkKhaki)
-//    hexcolor(0, 0, 205) => "#0000CD"  (MediumBlue)
-
-//    Optional bonus: color blending
-
-//    Given a list of hex color strings, produce the hex color string you get from averaging their RGB values together.
-//    You'll need to round channel values to integers.
-//
-//    blend({"#000000", "#778899"}) => "#3C444C"
-//    blend({"#E6E6FA", "#FF69B4", "#B0C4DE"}) => "#DCB1D9"
-
-    private static void hexcolor(int red, int green, int blue){
-
-    }
-
-    private static void blend(String color1, String color2){
-
-    }
 
 //    ***************************************************************************************************
 //    ***************************************************************************************************
@@ -217,8 +211,18 @@ public class Main {
 //    funnel("sleet", "lets") => false
 //    funnel("skiff", "ski") => false
 
-    private static void funnel(String str1, String str2){
+    private static boolean funnel(String str1, String str2){
+        boolean result = false;
 
+        for(int i = 0; i < str1.length(); i++){
+            StringBuilder tmp = new StringBuilder(str1);
+            tmp.deleteCharAt(i);
+
+            if(tmp.toString().equals(str2)){
+                result = true;
+            }
+        }
+        return result;
     }
 
 //    ***************************************************************************************************
@@ -353,38 +357,37 @@ public class Main {
 //    EbAAdbBEaBaaBBdAccbeebaec
 
     private static void tallyScores(String str){
+        int scoreA = 0;
+        int scoreB = 0;
+        int scoreC = 0;
+        int scoreD = 0;
+        int scoreE = 0;
 
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == 'a'){
+                scoreA++;
+            }else if(str.charAt(i) == 'A'){
+                scoreA--;
+            }else if(str.charAt(i) == 'b'){
+                scoreB++;
+            }else if(str.charAt(i) == 'B'){
+                scoreB--;
+            }else if(str.charAt(i) == 'c'){
+                scoreC++;
+            }else if(str.charAt(i) == 'C'){
+                scoreC--;
+            }else if(str.charAt(i) == 'd'){
+                scoreD++;
+            }else if(str.charAt(i) == 'D'){
+                scoreD--;
+            }else if(str.charAt(i) == 'e'){
+                scoreE++;
+            }else if(str.charAt(i) == 'E'){
+                scoreE--;
+            }
+        }
+
+        System.out.println("a:" + scoreA + ", " + "b:" + scoreB + ", " + "c:" + scoreC + ", " + "d:" + scoreD + ", " + "e:" + scoreE);
     }
 
-//    ***************************************************************************************************
-//    ***************************************************************************************************
-
-//    [2018-12-31] Challenge #371 [Easy] N queens validator
-
-//    For the purpose of this challenge, the N queens problem consists
-//    of putting one queen on every column (labeled a, b, c, ...) of an NxN chessboard,
-//    such that no two queens are in the same row or diagonal. An example valid solution for N = 6 is:
-//
-//            6  . . Q . . .
-//            5  . . . . . Q
-//            4  . Q . . . .
-//            3  . . . . Q .
-//            2  Q . . . . .
-//            1  . . . Q . .
-//               a b c d e f
-//    In chess notation, the squares with queens in this solution are called a2, b4, c6, d1, e3, and f5.
-//    We'll represent solutions by listing the rows that each column's queen appears in from left to right,
-//    so this solution is represented as the array {2, 4, 6, 1, 3, 5}.
-//
-//    Challenge:
-
-//    Given an array of 8 integers between 1 and 8, determine whether it represents a valid 8 queens solution.
-//
-//    qcheck({4, 2, 7, 3, 6, 8, 5, 1}) => true
-//    qcheck({2, 5, 7, 4, 1, 8, 6, 3}) => true
-//    qcheck({5, 3, 1, 4, 2, 8, 6, 3}) => false   (b3 and h3 are on the same row)
-//    qcheck({5, 8, 2, 4, 7, 1, 3, 6}) => false   (b8 and g3 are on the same diagonal)
-//    qcheck({4, 3, 1, 8, 1, 3, 5, 2}) => false   (multiple problems)
-
-//    You may optionally handle solutions for any N, not just N = 8.
 }
