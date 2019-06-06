@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d519844-9cfa-4944-b35b-beb86207734a" name="Default" comment="Latest challenge complete">
+    <list default="true" id="7d519844-9cfa-4944-b35b-beb86207734a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
@@ -18,9 +18,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="355" column="22" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="355" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="836">
+              <caret line="385" column="13" lean-forward="false" selection-start-line="385" selection-start-column="13" selection-end-line="385" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559849733332</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Latest challenge complete">
+      <created>1559849909644</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559849909644</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -221,7 +230,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -229,7 +240,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14313">
           <caret line="367" column="2" lean-forward="false" selection-start-line="367" selection-start-column="2" selection-end-line="367" selection-end-column="2" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -249,9 +262,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="355" column="22" lean-forward="true" selection-start-line="355" selection-start-column="22" selection-end-line="355" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="836">
+          <caret line="385" column="13" lean-forward="false" selection-start-line="385" selection-start-column="13" selection-end-line="385" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
